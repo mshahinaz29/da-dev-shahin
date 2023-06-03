@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {AiOutlinePlus} from 'react-icons/ai';
 import Todo from './Todo';
 import axiosClient from "./axios-client.js";
+import { Blocks } from 'react-loader-spinner';
 
 const style = {
   container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4`,
@@ -9,13 +10,13 @@ const style = {
   form: `flex justify-between`,
   input: `border p-2 w-full text-xl`,
   button: `border p-4 ml-2 bg-purple-500 text-slate-100`,
-  count: `text-center p-2`
+  count: `text-center p-2`,
+  loader: `fixed top-1/4 left-1/2`,
 };
 
 function App() {
 
   const [todos, setTodos] = useState<any>([]);
-
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -96,6 +97,16 @@ function App() {
     <div>      
       <div className={style.container}>      
         <h3 className={style.heading}>Todo List</h3>
+
+        <Blocks
+          visible={loading}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass={style.loader}
+        />
+
         <form onSubmit={createTodo} className={style.form}>
           <input 
             value={input}
@@ -106,6 +117,7 @@ function App() {
           />
           <button className={style.button}><AiOutlinePlus size={30} /></button>
         </form>
+        
         {todos && !loading && <ul>
           {todos.map((todo:any, index:number) => (
             <Todo 
