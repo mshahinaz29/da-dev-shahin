@@ -1,59 +1,22 @@
 # Digital Awesome Development Test Project
 
-This isn't really a test, rather a way to get an idea of how you problem solve and develop.
+# Laravel React To Do List App
+Todo App build with Laravel and React
 
-The project should take you no more than 4 hours to complete.
+## To Setup
 
-## Create a branch for your code
-When you are ready to start fork this repository to your own github account `da-dev-{your_name)`
-It's a good idea to make a couple of commits during development so we can see how you are progressing.
+Make sure you have environment setup properly. You will need PHP8.1, composer and Node.js.
 
+1. Download the project (or clone using GIT)
+2. Navigate to the `todo-app` folder
+3. copy `.env.example` into `.env` and configure database credentials
+4. Run `composer install`
+5. Set the encryption key by executing `php artisan key:gen`
+6. Run migrations `php artisan migrate --seed`
+7. Start local server by executing `php artisan serve`
+8. Open new terminal and navigate to the `react` folder
+9. Copy `react/.env.example` into `.env` and adjust the `VITE_API_BASE_URL` parameter
+9. Run `npm install`
+10. Run `npm run dev` to start vite server for React
 
-## How to submit your code for review
-
-Please commit all of your working code to your repository.
-Once you have finished creating the app and have committed your code let a team member know that your app is ready for review.
-*MAKE SURE TO SHARE A LINK TO YOUR REPOSITORY!*
-
-### Make sure your app is ready for review!
-
-We should be able to pull down your completed repository, install the packages and run it locally to review.
-
-***
-
-# To-do List (Test Project)
-
-We need to create a single list to-do app.
-There is no authentication required for this app.
-
-The app should display a single to-do list. Anyone can add, remove, or mark complete items in the list.
-
-The only field a to-do list item has is a text description. That is required to add an item to the to-do list.
-
-- When someone adds an item to the list it should save it to the database.
-- When someone marks an item on the list complete it should update it in the database and show the item as marked complete.
-- When someone removes the item from the list it should soft-delete the item and remove it from the list.
-
-
-
-## Scope
-
-- [ ] I should be able to view all of the items in the to-do list.
-- [ ] I should be able to add an item to the list
-- [ ] I should be able to remove an item from the list
-- [ ] I should be able to mark an item from the list as complete
-
-There are no design requirements for this task. You can install Tailwind or Bootstrap for basic styling if you prefer or include no styling at all. 
-
-
-### Technical Requirements
-- Database: Mysql or PostgreSQL
-- API backend: Laravel
-- Frontend: React.js (with typescript and React hooks)
-
-****
-#### Nice to have but not required:
-- Use Repository Pattern
-- Use Laravel's APiResource for API responses
-****
-Good luck and don't hesitate to reach out if you have any questions or need clarification on the scope or requirements.
+<p align="center"><a href="https://laravel.com" target="#"><img src="Screenshot.png" width="400" alt="Todo App screenshot"></a></p>
