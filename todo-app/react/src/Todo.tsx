@@ -9,14 +9,14 @@ const style = {
   button: `cursor-pointer flex items-center`,
 };
 
-function Todo({todo}:any) {
+function Todo({todo, toggleComplete, deleteTodo}:any) {
   return (
     <li className={todo.is_completed ? style.liComplete : style.li}>
       <div className={style.row}>
-        <input  type="checkbox" checked={todo.is_completed}  />
-        <p className={todo.is_completed ? style.textComplete : style.text}> {todo.name}</p>
+        <input onChange={() => toggleComplete(todo)} type="checkbox" checked={todo.is_completed}  />
+        <p onClick={() => toggleComplete(todo)}  className={todo.is_completed ? style.textComplete : style.text}> {todo.name}</p>
       </div>
-      <button>{<FaRegTrashAlt />}</button>
+      <button onClick={() => deleteTodo(todo)}>{<FaRegTrashAlt />}</button>
 
     </li>
   )
