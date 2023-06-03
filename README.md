@@ -1,7 +1,7 @@
 # Digital Awesome Development Test Project
 
 # Laravel React To Do List App
-Todo App build with Laravel and React
+Todo App built with Laravel and React
 
 ## To Setup
 
