@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {AiOutlinePlus} from 'react-icons/ai';
 import Todo from './Todo';
+import axiosClient from "./axios-client.js";
 
 const style = {
   container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4`,
@@ -13,17 +14,27 @@ const style = {
 
 function App() {
 
-  const [todos, setTodos] = useState<any>([
-    {name:'Breakfast', is_completed: 0},
-    {name:'Lunch', is_completed: 0},
-    {name:'Dinner', is_completed: 0}
-  ]);
+  const [todos, setTodos] = useState<any>([]);
 
   const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log(todos)
-  }, [todos]);  
+    getTodos();
+  }, [])
+
+  const getTodos = () => {
+    setLoading(true)
+    axiosClient.get('/todo')
+      .then(({ data }) => {
+        console.log(data);
+        setLoading(false)
+        setTodos(data.data);
+      })
+      .catch(() => {
+        setLoading(false)
+      })
+  }
 
 
   return (
