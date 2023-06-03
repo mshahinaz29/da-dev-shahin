@@ -1,6 +1,6 @@
 # Digital Awesome Development Test Project
 
-# Laravel React To Do List App
+# Laravel + React To Do List App
 Todo App built with Laravel and React
 
 ## To Setup
@@ -18,5 +18,7 @@ Make sure you have environment setup properly. You will need PHP8.1, composer an
 9. Copy `react/.env.example` into `.env` and adjust the `VITE_API_BASE_URL` parameter
 9. Run `npm install`
 10. Run `npm run dev` to start vite server for React
+
+## Screenshot
 
 <p align="center"><a href="https://laravel.com" target="#"><img src="Screenshot.png" width="400" alt="Todo App screenshot"></a></p>
